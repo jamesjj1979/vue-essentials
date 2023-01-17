@@ -11,7 +11,7 @@
   <body>
 <vie id="app">
   <ul>
-    <li v-for ="color in colors">{{colori}}</li>
+    <li v-for ="color in colors" v-if="color.primary">{{color.text}}</li>
   </ul>
   
 </vie>
@@ -22,7 +22,30 @@
         let app = new Vue({
             el:'#app',
             data:{
-                colors: ["red", "green","blue","yellow", "orange"]
+            
+            colors:[
+              {
+                text: 'red',
+                primary:true
+              },
+              {
+                text: 'green',
+                primary:false
+              },
+              {
+                text: 'blue',
+                primary:true
+              },
+              {
+                text: 'Yellow',
+                primary:true
+              },
+              {
+                text: 'Orange',
+                primary:false
+              },
+            
+            ]
             }
         })
 
