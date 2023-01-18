@@ -10,24 +10,33 @@
   </head>
   <body>
     <div id="app">
-      <span>Change the Text</span>
-      <input v-model="text"placeholder="text...">
-      <div>Lower Cased: {{lowerText}}</div>
+      <div>count {{count}}</div>
+        <button class="vue-btn" @click="increment">increment</button>
     </div>
 
     <script>
-   
       let app = new Vue({
         el: "#app",
        data:{
-        text: ""
+        count:0
        },
-       computed:{
-        lowerText(){
-          return this.text.toLowerCase()
+       methods:{
+          increment(){
+            this.count++
+          }
+       },
+      //  created(){
+      //   this.alertTime()
+      //  },
+      //  mounted(){
+      //   this.alertTime()
+      //  },
+        updated(){
+          console.log("this.count",this.count)
         }
-       }
       });
+
+
     </script>
   </body>
 </html>
